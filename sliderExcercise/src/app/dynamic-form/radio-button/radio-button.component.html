@@ -1,0 +1,13 @@
+<div>
+  <button [formControl]="addControl" (click)="onClick()" name="addControl" ngDefaultControl>Add Label</button>
+</div>
+
+<div [formGroup]="radioGroup">
+  <div class="">
+    <label>Question:</label>
+    <input formControlName="radioName" type="text" class="">
+  </div>
+  <div formArrayName="options" *ngFor="let option of options.controls; let i = index">
+   <label>Name:</label> <input type="text" [formControlName]="i" >
+  </div>
+</div>
